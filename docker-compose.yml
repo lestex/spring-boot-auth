@@ -1,0 +1,26 @@
+version: '3.3'
+services:
+  mongo_db:
+    image: mongo:3.2
+    volumes:
+      - auth_db:/data/db
+    networks:
+      auth_net:
+        aliases:
+          - auth_db
+
+  auth:
+    build: .
+    image: ${USERNAME}/auth:1.0
+    ports:
+      - 8080:8080/tcp
+    environment:
+       - "SPRING_PROFILES_ACTIVE=dev"
+    networks:
+      - auth_net
+
+volumes:
+  auth_db:
+
+networks:  
+  auth_net:
