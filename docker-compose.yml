@@ -15,7 +15,7 @@ services:
     ports:
       - 8080:8080/tcp
     environment:
-       - "SPRING_PROFILES_ACTIVE=dev"
+       - "SPRING_PROFILES_ACTIVE=${SPRING_PROFILES_ACTIVE}"
     networks:
       - auth_net
 
