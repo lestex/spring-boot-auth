@@ -1,5 +1,16 @@
 ## Simple REST security implementation for spring boot
 
+### Build
+```
+USERNAME=your_name docker-compose build
+```
+
+### Run
+```
+USERNAME=your_name docker-compose up
+```
+
+### Test
 ```
 # issues a GET request to retrieve tasks with no JWT
 # HTTP 403 Forbidden status is expected
